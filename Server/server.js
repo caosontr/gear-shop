@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import productRouter from "./src/routes/product.js";
 import categoryRouter from "./src/routes/category.js";
 import userRouter from "./src/routes/user.js";
+import cartRouter from "./src/routes/carts.js";
+import orderRouter from "./src/routes/orders.js";
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.use(cors());
 app.use(productRouter);
 app.use(categoryRouter);
 app.use(userRouter);
+app.use(cartRouter);
+app.use(orderRouter);
 
 mongoose
   .connect(process.env.DB_URL)
